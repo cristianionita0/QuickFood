@@ -1,8 +1,7 @@
 Group Project: QuickFood
-Members: Ganaside Alexandru, Ionita Cristian, Mihai Alexandru
-
 ---------------------------
-
+Members: Ganaside Alexandru, Ionita Cristian, Mihai Alexandru
+---------------------------
 Aplicatia noastra, QuickFood, are rolul de a aduce la un loc prestatori din domeniul alimentar (restaurante, pizzerii, firme de catering) ce furnizeaza servicii de livrare la domiciliu, si de a oferi clientilor posibilitatea de a trimite catre prestator comenzi cu usurinta, avand la indemana toate informatiile necesare.
 
 Functionalitatea aplicatiei este simpla. Odata inregistrat in aplicatie, utilizatorul trebuie sa completeze datele personale necesare comenzilor:  Nume complet, adrese de livrare, numar de telefon si alte informatii. 
