@@ -16,4 +16,4 @@ Pentru o mai buna vizibilitate catre utilizator, restaurantele au posibilitatea 
 
 In cazul in care clientul doreste sa plaseze o comanda, dar conexiunea de date nu este disponibila in acel moment, aplicatia ofera posibilitatea de a plasa comanda in asteptare, aceasta urmand a fi trimisa imediat ce conexiunea cu serverul este restabilita.
 
-Baza de date va rula pe un webserver, fiind realizata prin intermediul CouchDB. Aceasta va stoca si va fi actualizata continuu cu datele utilizatorilor si a restaurantelor. 
+Baza de date si aplicatia vor rula pe platforma CouchDB. Baza de date va stoca si va fi actualizata continuu cu datele utilizatorilor si a restaurantelor. 
