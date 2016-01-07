@@ -1,6 +1,10 @@
 // Initialize your app
 var myApp = new Framework7();
+var requirements = 0;
+//var db = "http://188.25.113.58:5984/_utils/database.html?clients";
+$.couch.urlPrefix = CouchDB.protocol + CouchDB.host + "/";
 
+	
 // Export selectors engine
 var $$ = Dom7;
 
@@ -54,17 +58,40 @@ function createContentPage() {
 function submit(){
 	var empty ="";
 	var uemail = document.getElementById('email');
-	var passid = document.getElementById('password');
-	var tel = document.getElementById('tel');
-	var uaddress = document.getElementById('fullAddress');
-	var uname = document.getElementById('fullName');
-	var bdate = document.getElementById('date');
+var passid = document.getElementById('password');
+var tel = document.getElementById('tel');
+var uaddress = document.getElementById('fullAddress');
+var uname = document.getElementById('fullName');
+var bdate = document.getElementById('date');
 	
 	ValidateEmail(uemail);
 	alphanumeric(uaddress);
 	passid_validation(passid,5,15);
 	allLetter(uname);
 	numeric(tel);
+	if(requirements==5){
+		
+		
+	var clientt={"_id": uemail, "password": passid,"tel": tel,"address": uaddress,"name": uname, "birth": bdate};
+	
+	$.couch.db("clients").saveDoc(clientt, {
+				    success: function(data) {
+				        console.log(data);
+						logResponse(data);
+						alert(uname + ", your account was created successfully!");
+				    },
+				    error: function(status) {
+				        console.log(status);
+						logResponse(status);
+				    }
+				});
+	
+	
+	
+	
+	
+	
+	}
 	
 }
 //validate email format
@@ -73,11 +100,12 @@ function ValidateEmail(uemail)
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
 if(uemail.value.match(mailformat))  
 {  
+requirements+=requirements+1;
 return true;  
 }  
 else  
 {  
-alert("You have entered an invalid email address!");  
+alert("You have entered an invalid email address boule!");  
 uemail.focus();  
 return false;  
 }  
@@ -88,7 +116,9 @@ function alphanumeric(uaddress)
 var letters = /^[0-9a-zA-Z ]+$/;  
 if(uaddress.value.match(letters))  
 {  
-return true;  
+requirements=requirements+1;
+return true; 
+ 
 }  
 else  
 {  
@@ -107,6 +137,7 @@ alert("Password should not be empty, and the length should be between "+mx+" and
 passid.focus();  
 return false;  
 }  
+requirements=requirements+1;
 return true;  
 }  
 //check the name
@@ -115,12 +146,14 @@ function allLetter(uname)
 var letters = /^[A-Za-z ]+$/;  
 if(uname.value.match(letters))  
 {  
+requirements=requirements+1;
 return true;  
 }  
 else  
 {  
 alert('Username must have alphabet characters only');  
 uname.focus();  
+
 return false;  
 }  
 }  
@@ -130,7 +163,9 @@ function numeric(tel)
 var letters = /^[0-9]+$/;  
 if(tel.value.match(letters))  
 {  
+requirements=requirements+1;
 return true;  
+
 }  
 else  
 {  
@@ -138,4 +173,11 @@ alert('Invalid phone number!');
 tel.focus();  
 return false;  
 }  
+}
+//create an user account
+function create_acc(){
+	
+	
+	
+	
 }
