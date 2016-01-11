@@ -15,3 +15,10 @@ Pentru o mai buna vizibilitate catre utilizator, restaurantele au posibilitatea 
 In cazul in care clientul doreste sa plaseze o comanda, dar conexiunea de date nu este disponibila in acel moment, aplicatia ofera posibilitatea de a plasa comanda in asteptare, aceasta urmand a fi trimisa imediat ce conexiunea cu serverul este restabilita.
 
 Baza de date si aplicatia vor rula pe platforma CouchDB. Baza de date va stoca si va fi actualizata continuu cu datele utilizatorilor si a restaurantelor. 
+
+
+Download APK (android studio): https://m.sendspace.com/file/nu8fou
+
+QuickFood 7framework: https://github.com/cristianionita0/QuickFood/issues/12
+
+PDF: https://github.com/cristianionita0/QuickFood/files/85930/QuickFood.User.Story.DOC.pdf
